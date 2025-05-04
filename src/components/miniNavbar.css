@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.mini-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    z-index: 9981;
+    box-sizing: border-box;
+}
+
+/* LEFT SIDE */
+.mini-left {
+    display: flex;
+    align-items: center;
+    padding-left: 1.2rem;
+    /* ⬅️ reduced padding for tighter spacing */
+    height: 100%;
+}
+
+.mini-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.6rem;
+    /* ⬆️ bigger logo */
+    letter-spacing: 0.5px;
+    color: black;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+}
+
+.mini-divider {
+    width: 1px;
+    background-color: black;
+    height: 100%;
+    margin-left: 0.8rem;
+    /* ⬅️ tighter gap between logo and line */
+}
+
+/* RIGHT SIDE */
+.mini-right {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+    height: 100%;
+}
+
+.mini-right ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.mini-right a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.mini-right a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 1px;
+    width: 0%;
+    background: black;
+    transition: width 0.3s ease;
+}
+
+.mini-right a:hover::after {
+    width: 100%;
+}
