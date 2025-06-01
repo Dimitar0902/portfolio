@@ -1,4 +1,3 @@
-// src/components/GlitchImage.jsx
 import React, { useRef } from 'react'
 import './glitchImage.css'
 import { Canvas, useFrame, extend } from '@react-three/fiber'
@@ -7,7 +6,6 @@ import { gsap } from 'gsap'
 
 const GlitchShaderMaterial = shaderMaterial(
   { uTexture: null, uTime: 0, uGlitchStrength: 0 },
-  // Vertex shader
   `
     varying vec2 vUv;
     void main() {
@@ -15,7 +13,6 @@ const GlitchShaderMaterial = shaderMaterial(
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
     }
   `,
-  // Fragment shader
   `
     uniform sampler2D uTexture;
     uniform float uTime;

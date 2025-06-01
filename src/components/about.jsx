@@ -14,19 +14,11 @@ export default function About () {
   useEffect(() => {
     const character = characterRef.current
     const content = document.querySelector('.about-left')
-    // const aboutRight = document.querySelector('.about-right')
 
     if (!character || !content) return
 
     const aboutBox = aboutRef.current.getBoundingClientRect()
     const contentBox = content.getBoundingClientRect()
-    // const rightBox = aboutRight.getBoundingClientRect()
-
-    // const x =
-    //   rightBox.left +
-    //   rightBox.width / 2 -
-    //   (characterBox.left + characterBox.width / 2)
-
     const y = window.innerHeight * 0.5 + contentBox.height * 0.5
 
     const x = contentBox.width * 0.5
