@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import glsl from 'vite-plugin-glsl'
 
-// https://vite.dev/config/
 export default defineConfig({
-  // ← this must match your repo name
   base: '/portfolio/',
-  plugins: [react()],
+  plugins: [
+    react(),
+    glsl() // Use vite-plugin-glsl
+  ],
   build: {
-    // output to docs/ so GitHub Pages can serve it
     outDir: 'docs'
   }
 })

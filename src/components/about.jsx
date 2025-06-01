@@ -2,12 +2,57 @@ import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './about.css'
+import characterImg from '../assets/character.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function About () {
   const aboutRef = useRef(null)
   const contentRef = useRef(null)
+  const characterRef = useRef(null)
+
+  useEffect(() => {
+    const character = characterRef.current
+    const content = document.querySelector('.about-left')
+    // const aboutRight = document.querySelector('.about-right')
+
+    if (!character || !content) return
+
+    const aboutBox = aboutRef.current.getBoundingClientRect()
+    const contentBox = content.getBoundingClientRect()
+    // const rightBox = aboutRight.getBoundingClientRect()
+
+    // const x =
+    //   rightBox.left +
+    //   rightBox.width / 2 -
+    //   (characterBox.left + characterBox.width / 2)
+
+    const y = window.innerHeight * 0.5 + contentBox.height * 0.5
+
+    const x = contentBox.width * 0.5
+
+    const offset = contentBox.top - aboutBox.top + contentBox.height * 0.5
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutRef.current,
+        start: `top 0%`,
+        end: `+=${offset - window.innerHeight * 0.5}px`,
+        scrub: true,
+        toggleActions: 'play reverse play reverse',
+        onEnter: () => character.classList.add('floating'),
+        onLeaveBack: () => character.classList.remove('floating')
+      }
+    })
+
+    tl.to(character, {
+      x,
+      y,
+      duration: 1.5,
+      ease: 'linear',
+      immediateRender: false
+    })
+  }, [])
 
   useEffect(() => {
     const elems = contentRef.current.querySelectorAll('.about-line')
@@ -31,6 +76,12 @@ export default function About () {
 
   return (
     <section id='about' ref={aboutRef} className='about'>
+      <div className='character-wrapper'>
+        <div className='character' ref={characterRef}>
+          <img src={characterImg} alt='Illustrated avatar' />
+        </div>
+      </div>
+
       <div className='about-inner'>
         <div className='about-left' ref={contentRef}>
           <p className='about-line'>
@@ -43,9 +94,7 @@ export default function About () {
             toward new and exciting horizons.
           </p>
         </div>
-        <div className='about-right'>
-          {/* Character floats into this zone */}
-        </div>
+        <div className='about-right'></div>
       </div>
     </section>
   )

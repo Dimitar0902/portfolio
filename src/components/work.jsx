@@ -29,8 +29,6 @@ export default function Work () {
   const sectionRef = useRef()
   const canvasRef = useRef()
   const titleRef = useRef()
-  const projectsWrapperRef = useRef()
-  const projectsInnerRef = useRef()
 
   useEffect(() => {
     const ctx1 = gsap.context(() => {
@@ -60,59 +58,13 @@ export default function Work () {
         )
     }, sectionRef)
 
-    const cards = gsap.utils.toArray('.work-item')
-    const count = cards.length
-    const wrapper = projectsWrapperRef.current
-    const inner = projectsInnerRef.current
-
-    wrapper.style.height = `${window.innerHeight * count}px`
-
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: wrapper,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-        pin: inner
-      }
-    })
-
-    cards.forEach(card => {
-      tl.to({}, { duration: 0.5 })
-
-      tl.to(
-        card,
-        {
-          height: '200px', 
-          paddingTop: '1.2rem',
-          paddingBottom: '1.2rem',
-          ease: 'none',
-          duration: 0.5
-        }
-      )
-      tl.to(
-        [
-          card.querySelector('.work-item-description'),
-          card.querySelector('.work-item-chips')
-        ],
-        {
-          opacity: 0,
-          duration: 0.5,
-          onComplete () {
-            this.targets().forEach(el => (el.style.display = 'none'))
-          }
-        },
-        '<' 
-      )
-    })
-
     return () => {
       ctx1.revert()
       ScrollTrigger.getAll().forEach(st => st.kill())
-      wrapper.style.height = ''
     }
   }, [])
+
+  const base = import.meta.env.BASE_URL
 
   return (
     <section ref={sectionRef} className='work-section'>
@@ -130,27 +82,27 @@ export default function Work () {
         </h1>
       </div>
 
-      <div ref={projectsWrapperRef} className='work-projects-wrapper'>
-        <div ref={projectsInnerRef} className='work-projects-inner'>
+      <div className='work-projects-wrapper'>
+        <div className='work-projects-inner'>
           <WorkItem
             title='Dehaze'
             subtitle='Artist Portfolio Website'
             description='A minimalistic and bold portfolio website built for Dehaze to showcase their art and creative projects. Developed as my semester 2 showcase project.'
-            image='/assets/dehaze.png'
+            image={`${base}assets/dehaze.png`}
             techStack={['React', 'Framer Motion', 'Vite']}
           />
           <WorkItem
             title='PaveMind'
             subtitle='Burnout Prevention Web App'
             description='PaveMind is a web app aimed at helping users prevent and manage burnout through mood tracking and resources. Built as a final group project in semester 3.'
-            image='/assets/pavemind.png'
+            image={`${base}assets/pavemind.png`}
             techStack={['React', 'Express.js', 'MongoDB']}
           />
           <WorkItem
             title='SleepWell'
             subtitle='Sleep Monitoring Mobile App'
             description='SleepWell is a Swift-based iOS mobile app that tracks user sleep patterns and provides personalized feedback to improve sleep habits.'
-            image='/assets/sleepwell.jpg'
+            image={`${base}assets/sleepwell.jpg`}
             techStack={['Swift', 'Xcode', 'CoreData']}
           />
         </div>

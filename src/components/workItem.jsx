@@ -1,4 +1,5 @@
 import React from 'react'
+import GlitchImage from './glitchImage'
 import './workItem.css'
 
 export default function WorkItem ({
@@ -25,7 +26,7 @@ export default function WorkItem ({
         </div>
         <div className='work-item-right'>
           <div className='work-item-image-wrapper'>
-            <img src={image} alt={title} className='work-item-static-img' />
+            <GlitchImage imageUrl={image} />
           </div>
         </div>
       </div>

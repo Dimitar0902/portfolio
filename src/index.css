@@ -1,15 +1,10 @@
-/* src/index.css */
-
-/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap');
 
-/* Root Variables */
 :root {
   --font-header: 'Bebas Neue', cursive;
   --font-body: 'Space Grotesk', sans-serif;
 }
 
-/* Prevent horizontal scrolling but allow vertical overflow for position:sticky */
 html {
   overflow-x: hidden;
   overflow-y: visible;
@@ -25,7 +20,6 @@ body {
   background: #ffffff;
 }
 
-/* Remove default margins/padding */
 h1,
 p,
 ul,
@@ -33,4 +27,25 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.scroll-hint-wrapper {
+  width: 100%;
+  padding-top: 1.5rem;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.scroll-hint {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #444;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.scroll-hint span {
+  display: inline-block;
+  transition: transform 0.2s ease;
 }

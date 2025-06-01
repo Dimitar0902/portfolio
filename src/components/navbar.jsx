@@ -16,7 +16,6 @@ export default function Navbar ({ loaded }) {
 
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
-    // 1) Draw in each nav-letter
     tl.fromTo(
       '.nav-letter',
       { scaleX: 0, opacity: 0 },
@@ -30,13 +29,11 @@ export default function Navbar ({ loaded }) {
       0.3
     )
 
-    // 2) Divider lines
     tl.to('.navbar', { '--dividerScale': 1, duration: 0.6 }, 0.3)
       .to('.nav-links', { '--linksDividerScale': 1, duration: 0.6 }, 0.3)
       .to('.navbar', { '--navBottomScale': 1, duration: 0.6 }, 0.3)
       .to('.nav-content', { '--bottomLineScale': 1, duration: 0.6 }, 0.3)
 
-    // 3) Looping text
     const loop = gsap.timeline({ repeat: -1, repeatDelay: 0.8 })
     const words = ['TAR', 'TROV']
     words.forEach(word => {
@@ -56,7 +53,6 @@ export default function Navbar ({ loaded }) {
       loop.to({}, { duration: 0.4 })
     })
 
-    // 4) Tagline type-out
     tl.fromTo(
       taglineRef.current,
       { text: '' },

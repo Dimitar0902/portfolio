@@ -108,9 +108,3 @@
     display: block;
     will-change: transform;
 }
-
-.work-item-image-wrapper:hover .work-item-static-img {
-    transform-origin: center;
-    transform: scale(1.06) rotate(2deg);
-    transition: transform 0.6s ease-out;
-}

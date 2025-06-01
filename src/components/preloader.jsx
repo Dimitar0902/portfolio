@@ -23,19 +23,14 @@ export default function Preloader ({ onComplete }) {
       }
     })
 
-    // hide the real nav logo until we finish
     gsap.set(navLogo, { visibility: 'hidden' })
 
-    // 1) fill the progress bar
     tl.to(fillBar.current, { width: '100%', duration: 1.2, ease: 'none' })
 
-    // 2) slide/scale DIMI into place
     tl.to(preLogo.current, { x: dx, y: dy, scale, duration: 1.2 })
 
-    // 3) fade out DIMI
     tl.to(preLogo.current, { autoAlpha: 0, duration: 0.6 }, '-=0.3')
 
-    // 4) fade out overlay
     tl.to(overlay.current, { autoAlpha: 0, duration: 0.2 }, '-=0.4')
   }, [onComplete])
 

@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react'
 import characterImg from '../assets/character.png'
 import './landing.css'
@@ -8,43 +7,51 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Landing () {
-  const characterRef = useRef(null)
+  // const characterRef = useRef(null)
 
-  useEffect(() => {
-    const character = characterRef.current
-    const target = document.querySelector('.about-right')
+  // useEffect(() => {
+  //   const character = characterRef.current
+  //   const aboutLeft = document.querySelector('.about-left')
+  //   const aboutRight = document.querySelector('.about-right')
 
-    if (!character || !target) return
+  //   if (!character || !aboutLeft || !aboutRight) return
 
-    const characterBox = character.getBoundingClientRect()
-    const targetBox = target.getBoundingClientRect()
+  //   const characterBox = character.getBoundingClientRect()
+  //   const leftBox = aboutLeft.getBoundingClientRect()
+  //   const rightBox = aboutRight.getBoundingClientRect()
 
-    const x =
-      targetBox.left +
-      targetBox.width / 2 -
-      (characterBox.left + characterBox.width / 2)
-    const y =
-      targetBox.top + window.scrollY - (characterBox.top + window.scrollY)
+  //   const x =
+  //     rightBox.left +
+  //     rightBox.width / 2 -
+  //     (characterBox.left + characterBox.width / 2)
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#about',
-        start: 'top center',
-        end: 'bottom top', 
-        scrub: true,
-        toggleActions: 'play reverse play reverse',
-        onEnter: () => character.classList.add('floating'),
-        onLeaveBack: () => character.classList.remove('floating')
-      }
-    })
+  //   const y =
+  //     leftBox.top +
+  //     leftBox.height / 2 +
+  //     window.scrollY -
+  //     (characterBox.top + characterBox.height / 2 + window.scrollY)
 
-    tl.to(character, {
-      x,
-      y,
-      duration: 1,
-      ease: 'power2.out'
-    })
-  }, [])
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: aboutLeft,
+  //       // start: 'top 90%',
+  //       // end: 'top 10%',
+  //       markers: true,
+  //       scrub: true,
+  //       toggleActions: 'play reverse play reverse',
+  //       onEnter: () => character.classList.add('floating'),
+  //       onLeaveBack: () => character.classList.remove('floating')
+  //     }
+  //   })
+
+  //   tl.to(character, {
+  //     x,
+  //     y,
+  //     duration: 1.5,
+  //     ease: 'linear',
+  //     immediateRender: false
+  //   })
+  // }, [])
 
   return (
     <section className='landing' id='landing'>
@@ -56,11 +63,11 @@ export default function Landing () {
         ))}
       </div>
 
-      <div className='character-wrapper'>
+      {/* <div className='character-wrapper'>
         <div className='character' ref={characterRef}>
           <img src={characterImg} alt='Illustrated avatar' />
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

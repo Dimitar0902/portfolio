@@ -1,14 +1,11 @@
 .preloader {
     position: fixed;
     inset: 0;
-    /* cover entire viewport */
     background: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* DIMI vertically centered */
     align-items: center;
-    /* DIMI horizontally centered */
     pointer-events: none;
     z-index: 10000;
 }
@@ -16,12 +13,9 @@
 .pre-dimi {
     font-family: var(--font-header);
     font-size: 20rem;
-    /* initial logo size */
     margin: 0;
     margin-bottom: 2rem;
-    /* space down to the bar */
     transform-origin: top left;
-    /* anchor for the shrink+move */
 }
 
 .progress-bar {

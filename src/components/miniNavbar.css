@@ -19,19 +19,17 @@
     box-sizing: border-box;
 }
 
-/* LEFT SIDE */
+
 .mini-left {
     display: flex;
     align-items: center;
     padding-left: 1.2rem;
-    /* ⬅️ reduced padding for tighter spacing */
     height: 100%;
 }
 
 .mini-logo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.6rem;
-    /* ⬆️ bigger logo */
     letter-spacing: 0.5px;
     color: black;
     display: flex;
@@ -45,10 +43,8 @@
     background-color: black;
     height: 100%;
     margin-left: 0.8rem;
-    /* ⬅️ tighter gap between logo and line */
 }
 
-/* RIGHT SIDE */
 .mini-right {
     display: flex;
     align-items: center;
