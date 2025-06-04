@@ -12,7 +12,6 @@ export default function App () {
   const [showMiniNav, setShowMiniNav] = useState(false)
   const scrollRef = useRef(null)
 
-  // Show MiniNavbar when .about-left is in view, hide it when it's out of view (above)
   useEffect(() => {
     const aboutText = document.querySelector('.about-left')
     if (!aboutText) return
@@ -34,7 +33,6 @@ export default function App () {
     }
   }, [])
 
-  // Reset scroll hint animation after load
   useEffect(() => {
     if (scrollRef.current) {
       const chars = scrollRef.current.querySelectorAll('span')

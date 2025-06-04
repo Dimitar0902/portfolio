@@ -77,13 +77,13 @@ export default function About () {
       <div className='about-inner'>
         <div className='about-left' ref={contentRef}>
           <p className='about-line'>
-            <span className='about-label'>ABOUT</span> For 10 years, I've been
-            delivering powerful, tailor-made websites that help brands anchor
-            their authority.
+            <span className='about-label'>ABOUT</span> My name is Dimitar and I
+            am a ICT student at Fontys University specializing in Front-end
+            development.
           </p>
           <p className='about-line'>
-            Now, I’m harnessing this cargo of expertise to propel your projects
-            toward new and exciting horizons.
+            I love creating interactive web experiences and have a particular
+            passion for 3D design and animation.
           </p>
         </div>
         <div className='about-right'></div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import GlitchImage from './glitchImage'
+import { FaGithub } from 'react-icons/fa' // <-- import GitHub icon
 import './workItem.css'
 
 export default function WorkItem ({
@@ -7,7 +8,8 @@ export default function WorkItem ({
   subtitle,
   description,
   image,
-  techStack = []
+  techStack = [],
+  githubLink // new prop
 }) {
   return (
     <div className='work-item'>
@@ -23,12 +25,24 @@ export default function WorkItem ({
               </div>
             ))}
           </div>
+          {githubLink && (
+            <a
+              href={githubLink}
+              className='github-button'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FaGithub className='github-icon' />
+              View on GitHub
+            </a>
+          )}
         </div>
         <div className='work-item-right'>
           <div className='work-item-image-wrapper'>
-            <GlitchImage imageUrl={image} />
+            <GlitchImage imageUrl={image} className='work-image' />
           </div>
         </div>
+        <div className='divider'></div>
       </div>
     </div>
   )

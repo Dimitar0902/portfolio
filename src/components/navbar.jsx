@@ -89,10 +89,18 @@ export default function Navbar ({ loaded }) {
         <p className='tagline' ref={taglineRef}></p>
 
         <div className='social-icons'>
-          <a href='#'>
+          <a
+            href='https://www.linkedin.com/in/dimitar-dimitrov-6039352a1/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <FaLinkedin />
           </a>
-          <a href='#'>
+          <a
+            href='https://github.com/Dimitar0902'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <FaGithub />
           </a>
         </div>

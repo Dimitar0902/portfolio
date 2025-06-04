@@ -87,23 +87,26 @@ export default function Work () {
           <WorkItem
             title='Dehaze'
             subtitle='Artist Portfolio Website'
-            description='A minimalistic and bold portfolio website built for Dehaze to showcase their art and creative projects. Developed as my semester 2 showcase project.'
+            description='During my second semester, I created a portfolio website for an artist named Dehaze. The site showcases their work and provides a platform for potential clients to contact them.'
             image={`${base}assets/dehaze.png`}
-            techStack={['React', 'Framer Motion', 'Vite']}
+            techStack={['HTML', 'CSS', 'JavaScript']}
+            githubLink='https://github.com/Dimitar0902/DEHAZE'
           />
           <WorkItem
             title='PaveMind'
             subtitle='Burnout Prevention Web App'
             description='PaveMind is a web app aimed at helping users prevent and manage burnout through mood tracking and resources. Built as a final group project in semester 3.'
             image={`${base}assets/pavemind.png`}
-            techStack={['React', 'Express.js', 'MongoDB']}
+            techStack={['JavaScript', 'Express.js', 'MongoDB']}
+            githubLink='https://github.com/Dimitar0902/Pave-Mind'
           />
           <WorkItem
-            title='SleepWell'
-            subtitle='Sleep Monitoring Mobile App'
-            description='SleepWell is a Swift-based iOS mobile app that tracks user sleep patterns and provides personalized feedback to improve sleep habits.'
-            image={`${base}assets/sleepwell.jpg`}
-            techStack={['Swift', 'Xcode', 'CoreData']}
+            title='Het Hornemann Huis'
+            subtitle='Installation for Museum'
+            description='An interactive installation for the Het Hornemann Huis museum, allowing visitors to explore the history of the building through a digital interface. Developed as a group project in semester 7.'
+            image={`${base}assets/hornemann.png`}
+            techStack={['JavaScript', 'TensorFlow', 'Three.js']}
+            githubLink='https://github.com/Dimitar0902/The-Unremembered'
           />
         </div>
       </div>
